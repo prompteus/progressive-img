@@ -30,7 +30,33 @@
 
   <demo-snippet>
     <template>
-      <progressive-img style="border-radius: 1em" srcset="image.jpg" placeholder="rsz_image.jpg" alt="noot"></progressive-img>
+      <progressive-img
+              srcset="image.jpg"
+              placeholder="rsz_image.jpg"
+              alt="image alt text"
+              load="immediately">
+      </progressive-img>
+    </template>
+  </demo-snippet>
+
+  <demo-snippet>
+    <template>
+      <progressive-img
+              srcset="image.jpg"
+              placeholder="rsz_image.jpg"
+              alt="image alt text">
+      </progressive-img>
+    </template>
+  </demo-snippet>
+
+  <demo-snippet>
+    <template>
+      <progressive-img
+              srcset="image.jpg"
+              placeholder="rsz_image.jpg"
+              alt="image alt text"
+              load="on-visible">
+      </progressive-img>
     </template>
   </demo-snippet>
 

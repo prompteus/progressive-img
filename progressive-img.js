@@ -14,7 +14,7 @@ class ProgressiveImg extends PolymerElement {
           display: block;
         }
       
-        div {
+        .container {
           overflow: hidden;
           position: relative;
         }
@@ -38,17 +38,18 @@ class ProgressiveImg extends PolymerElement {
           width: 100%;
           opacity: 0;
           will-change: opacity;
-          transition: opacity ease-in .15s;
+          transition: opacity ease-in .2s;
         }
                         
-        img.final[loaded] {
+        [loaded] .final {
           opacity: 1;
         }
+        
       </style>
   
-      <div>
-          <img class="placeholder" src$="[[placeholder]]" alt$="[[alt]]" loaded$="[[_loaded]]">
-          <img class="final" src$="[[_finalSrc]]" srcset$="[[_finalSrcset]]" alt$="[[alt]]" loaded$="[[_loaded]]" on-load="finalLoaded">
+      <div class="container" on-click="loadLarge" loaded$="[[_loaded]]">
+          <img class="placeholder" src$="[[placeholder]]" alt$="[[alt]]">
+          <img class="final" src$="[[_finalSrc]]" srcset$="[[_finalSrcset]]" alt$="[[alt]]" on-load="finalLoaded">
       </div>
     `
   }
@@ -56,9 +57,27 @@ class ProgressiveImg extends PolymerElement {
   constructor() {
     super()
     afterNextRender(this, () => {
-      this._finalSrc = this.src
-      this._finalSrcset = this.srcset
+      if (this.load === 'immediately') {
+        this.loadLarge()
+      } else if (this.load === 'on-visible') {
+        this.observeVisibility()
+      }
     })
+  }
+
+  loadLarge() {
+    this._finalSrc = this.src
+    this._finalSrcset = this.srcset
+  }
+
+  observeVisibility() {
+    this.observer = new IntersectionObserver((nodes) => {
+      if (nodes[0].isIntersecting) {
+        this.loadLarge()
+        this.observer.disconnect()
+      }
+    })
+    this.observer.observe(this.shadowRoot.querySelector('.placeholder'))
   }
 
   finalLoaded() {
@@ -71,6 +90,7 @@ class ProgressiveImg extends PolymerElement {
       src: String,
       srcset: String,
       alt: String,
+      load: String,
       _finalSrc: String,
       _finalSrcset: String,
       _loaded: {
