@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "semi": [
+      1,
+      "never"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ]
+  },
+  "env": {
+    "browser": true
+  }
+}

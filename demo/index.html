@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>progressive-img demo</title>
+
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+  <script type="module">
+    import '@polymer/iron-demo-helpers/demo-pages-shared-styles'
+    import '@polymer/iron-demo-helpers/demo-snippet'
+    import '../progressive-img'
+  </script>
+
+  <style>
+    .container {
+      max-width: 100%;
+      width: calc(20em + 30vw);
+      margin: 5vw auto;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <demo-snippet>
+    <template>
+      <progressive-img style="border-radius: 1em" srcset="image.jpg" placeholder="rsz_image.jpg" alt="noot"></progressive-img>
+    </template>
+  </demo-snippet>
+
+</div>
+
+</body>
+</html>

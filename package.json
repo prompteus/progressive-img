@@ -1,0 +1,18 @@
+{
+  "name": "progressive-img",
+  "description": "progressively loading image",
+  "main": "progressive-img.js",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2"
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "wct-browser-legacy": "^1.0.0"
+  }
+}
