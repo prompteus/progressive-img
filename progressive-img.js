@@ -47,8 +47,8 @@ class ProgressiveImg extends PolymerElement {
       </style>
   
       <div>
-          <img class="placeholder" src$="[[placeholder]]" alt$="[[alt]]" loaded$="[[loaded]]">
-          <img class="final" src$="[[finalSrc]]" srcset$="[[finalSrcset]]" alt$="[[alt]]" loaded$="[[loaded]]" on-load="finalLoaded">
+          <img class="placeholder" src$="[[placeholder]]" alt$="[[alt]]" loaded$="[[_loaded]]">
+          <img class="final" src$="[[_finalSrc]]" srcset$="[[_finalSrcset]]" alt$="[[alt]]" loaded$="[[_loaded]]" on-load="finalLoaded">
       </div>
     `
   }
@@ -56,13 +56,13 @@ class ProgressiveImg extends PolymerElement {
   constructor() {
     super()
     afterNextRender(this, () => {
-      this.finalSrc = this.src
-      this.finalSrcset = this.srcset
+      this._finalSrc = this.src
+      this._finalSrcset = this.srcset
     })
   }
 
   finalLoaded() {
-    this.loaded = true
+    this._loaded = true
   }
 
   static get properties() {
@@ -71,9 +71,9 @@ class ProgressiveImg extends PolymerElement {
       src: String,
       srcset: String,
       alt: String,
-      finalSrc: String,
-      finalSrcset: String,
-      loaded: {
+      _finalSrc: String,
+      _finalSrcset: String,
+      _loaded: {
         type: Boolean,
         value: false
       }
