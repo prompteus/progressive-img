@@ -71,9 +71,9 @@ class ProgressiveImg extends PolymerElement {
   constructor() {
     super()
     afterNextRender(this, () => {
-      if (this.load === 'immediately') {
+      if (this.loadStrategy === 'instant') {
         this.loadLarge()
-      } else if (this.load === 'on-visible') {
+      } else if (this.loadStrategy === 'on-visible') {
         this.observeVisibility()
       }
     })
@@ -107,7 +107,7 @@ class ProgressiveImg extends PolymerElement {
 
       alt: String,
 
-      load: String,
+      loadStrategy: String,
 
       _finalSrc: String,
       _finalSrcset: String,
