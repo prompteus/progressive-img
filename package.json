@@ -1,7 +1,20 @@
 {
   "name": "progressive-img",
-  "description": "progressively loading image",
+  "description": "Custom element (written in Polymer) to load img progressively and lazily. It first shows tiny blurred placeholder and loads full-sized image afterwards. It can also load image after click or entering viewport",
+  "keywords": [
+    "progressive",
+    "lazy",
+    "image",
+    "img",
+    "web component",
+    "custom element",
+    "polymer",
+    "element",
+    "html"
+  ],
   "main": "progressive-img.js",
+  "repository": "https://github.com/cuddlecheek/progressive-img.git",
+  "author": "Marek Kadlčík",
   "license": "BSD-3-Clause",
   "dependencies": {
     "@polymer/polymer": "^3.0.0",
