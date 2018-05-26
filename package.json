@@ -2,6 +2,7 @@
   "name": "progressive-img",
   "description": "progressively loading image",
   "main": "progressive-img.js",
+  "license": "BSD-3-Clause",
   "dependencies": {
     "@polymer/polymer": "^3.0.0",
     "eslint-plugin-import": "^2.12.0",
