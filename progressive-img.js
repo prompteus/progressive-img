@@ -38,7 +38,7 @@ class ProgressiveImg extends PolymerElement {
         }
           
         [loaded] .placeholder {
-          transform: scale(0.9);
+          transform: scale(0.95);
           position: absolute;
         }
           
