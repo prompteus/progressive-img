@@ -20,6 +20,10 @@
       width: calc(20em + 30vw);
       margin: 5vw auto;
     }
+
+    footer {
+      padding-top: 10vw;
+    }
   </style>
 
 </head>
@@ -27,6 +31,10 @@
 <body>
 
 <div class="container">
+
+  <noscript>
+    <h1>Please enable javascript to view this demo.</h1>
+  </noscript>
 
   <demo-snippet>
     <template>
@@ -87,7 +95,8 @@
       <progressive-img
               src="space.png"
               placeholder="space-tiny.png"
-              alt="space nebula">
+              alt="space nebula"
+              load-strategy="on-visible">
       </progressive-img>
     </template>
   </demo-snippet>
@@ -101,6 +110,19 @@
       </progressive-img>
     </template>
   </demo-snippet>
+
+
+  <footer>
+    credits:
+    <ul>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Skyscrapers_of_Shinjuku_2009_January_(revised).jpg">city scape</a></li>
+      <li><a href="https://fr.wikipedia.org/wiki/Fichier:Large_Scaled_Forest_Lizard.jpg">lizard</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Arthur_(hi_res).jpg">hummingbird</a></li>
+      <li><a href="https://www.nasa.gov/feature/goddard/2018/lagoon-nebula-visible-light-view">space nebula</a></li>
+      <li><a href="https://commons.wikimedia.org/wiki/File:Midnight_Manhattan,_The_Chrysler_Building_In_New_York,_USA.gif">night city gif</a></li>
+      <li>the car is original work</li>
+    </ul>
+  </footer>
 
 </div>
 
