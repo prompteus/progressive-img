@@ -33,7 +33,7 @@
       <progressive-img
               srcset="city.jpg"
               placeholder="city-tiny.jpg"
-              alt="image alt text"
+              alt="city scape"
               load-strategy="instant">
       </progressive-img>
     </template>
@@ -42,9 +42,30 @@
   <demo-snippet>
     <template>
       <progressive-img
-              src="lizard.jpg"
+              style="--placeholder-scale: 1.3; --transition-timing-function: ease"
+              srcset="lizard.jpg 800w, lizard-medium.jpg"
               placeholder="lizard-tiny.jpg"
-              alt="image alt text">
+              alt="lizard">
+      </progressive-img>
+    </template>
+  </demo-snippet>
+
+  <demo-snippet>
+    <template>
+      <custom-style>
+        <style>
+          .hummingbird {
+            --transition-duration: 1s;
+            --placeholder-filter: blur(14px) saturate(2.4);
+          }
+        </style>
+      </custom-style>
+
+      <progressive-img
+              class="hummingbird"
+              srcset="hummingbird.jpg"
+              placeholder="hummingbird-tiny.jpg"
+              alt="hummingbird">
       </progressive-img>
     </template>
   </demo-snippet>
@@ -52,22 +73,31 @@
   <demo-snippet>
     <template>
       <progressive-img
-              srcset="hummingbird.jpg"
-              placeholder="hummingbird-tiny.jpg"
-              alt="image alt text"
-              load-strategy="on-visible">
-      </progressive-img>
-    </template>
-  </demo-snippet>
-
-  <demo-snippet>
-    <template>
-      <progressive-img
-              srcset="hummingbird.jpg"
-              placeholder="hummingbird-tiny.jpg"
-              alt="image alt text"
+              src="car.jpg"
+              placeholder="car-tiny.jpg"
+              alt="car"
               load-strategy="on-visible"
               intersection-margin="500px">
+      </progressive-img>
+    </template>
+  </demo-snippet>
+
+  <demo-snippet>
+    <template>
+      <progressive-img
+              src="space.png"
+              placeholder="space-tiny.png"
+              alt="space nebula">
+      </progressive-img>
+    </template>
+  </demo-snippet>
+
+  <demo-snippet>
+    <template>
+      <progressive-img
+              src="lights-gif.gif"
+              placeholder="lights-gif-tiny.jpg"
+              alt="night city car lights gif">
       </progressive-img>
     </template>
   </demo-snippet>
