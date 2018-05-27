@@ -93,7 +93,7 @@ class ProgressiveImg extends PolymerElement {
         this.observer.disconnect()
       }
     }, {
-      rootMargin: this.loadThreshold
+      rootMargin: this.intersectionMargin
     })
     this.observer.observe(this.shadowRoot.querySelector('.placeholder'))
   }
@@ -114,7 +114,7 @@ class ProgressiveImg extends PolymerElement {
 
       loadStrategy: String,
 
-      loadThreshold: {
+      intersectionMargin: {
         type: String,
         value: '200px'
       },
