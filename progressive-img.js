@@ -31,14 +31,14 @@ class ProgressiveImg extends PolymerElement {
         img.placeholder {
           filter: var(--placeholder-filter);
           transform: scale(var(--placeholder-scale));
-          will-change: transform;
-          transition-property: transform;
+          will-change: transform, filter;
+          transition-property: transform, filter;
           transition-timing-function: linear;
           transition-duration: calc(var(--transition-duration) * 2);
         }
           
         [loaded] .placeholder {
-          transform: scale(0.95);
+          transform: scale(1);
           position: absolute;
         }
           
